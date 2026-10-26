@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Gaby.com</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    
+
+    <header>
+
+<nav>
+    <input type="checkbox" id="menu-check">
+    <label for="menu-check" class="menu-btn">&#9776; Menú</label>
+
+    <ul class="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#gaby">Gaby</a></li>
+        <li><a href="#hobie">Hobie</a></li>
+        <li><a href="#teatro">Teatro</a></li>
+        <li><a href="#graduacion">Graduación</a></li>
+        <li><a href="#redes">Redes</a></li>
+        <li><a href="#sugerencias">Sugerencias</a></li>
+    </ul>
+</nav>
+
+        <div class="encabezado">
+            <h1>GABY.COM</h1>
+        </div>
+
+    </header>
+
+<!-- CARRUSEL DE IMÁGENES -->
+<div class="carrusel-container">
+    <div class="carrusel-track">
+        <!-- Diapositiva 1 -->
+        <div class="slide">
+            <img src="imagenes/collage.jpg" alt="Imagen destacada 1">
+        </div>
+        <!-- Diapositiva 2 -->
+        <div class="slide">
+            <img src="imagenes/final imagen .jpeg" alt="Imagen destacada 2">
+        </div>
+        <!-- Diapositiva 3 -->
+        <div class="slide">
+            <img src="imagenes/Graduacion.jpeg" alt="Imagen destacada 3">
+        </div>
+    </div>
+</div>
+    
+
+    <section class="presentacion" id="gaby">
+
+        <div class="foto">
+            <img src="imagenes/coca.jpg" alt="Foto de Gabriela">
+        </div>
+
+        <p>
+            Mi nombre es Gabriela Molina Naranjo, tengo 19 años, nací el 15 de noviembre de 2006,
+            soy escorpio. Actualmente estudio comunicación social en la Universidad Católica Luis
+            Amigó, pero también me gustaría estudiar teatro, antropología, maquillaje y psicología.
+            No tengo canción ni película favorita. Mi sabor de helado favorito es el brownie o
+            chocolate, tengo dos perras llamadas Candy y Kiara, también una gata llamada Sombra.
+            Creo en el universo, Dios, la ciencia, creo en muchas cosas.
+        </p>
+
+    </section>
+
+
+   
+
+  <aside class="publicidad">
+
+        <img
+            src="imagenes/coca.jpg"
+            alt="Publicidad Coca Cola"
+        >
+
+  </aside>
+
+
+  
+
+    <section class="contenido">
+
+
+       
+
+        <article class="tarjeta" id="hobie">
+
+            <h2>Hobie</h2>
+
+            <img
+                src="imagenes/collage.jpg"
+                alt="Collage"
+            >
+
+            <p>
+                Mi hobbie es hacer collage, es algo que me relaja y me hace más creativa.
+                El collage es la técnica artística de unir elementos o recortes de distinto
+                origen y convertirlos en una obra.
+                <br>
+                Leer más...
+            </p>
+
+        </article>
+
+
+      
+
+        <article class="tarjeta" id="teatro">
+
+            <h2>Teatro</h2>
+
+            <img
+                src="imagenes/Teatro final.jpg"
+                alt="Teatro"
+            >
+
+            <p>
+                Empecé a estudiar teatro en marzo de este año, lo estudio en el Teatro
+                Oficina Central de los Sueños que queda por el centro.
+                El año pasado estudié performance.
+                <br>
+                Leer más...
+            </p>
+
+        </article>
+
+
+
+        <article class="tarjeta" id="graduacion">
+
+            <h2>Graduación</h2>
+
+            <img
+                src="imagenes/Graduacion.jpeg"
+                alt="Graduación"
+            >
+
+            <p>
+                Me gradué del colegio INEM José Félix de Restrepo en el año 2023.
+                Me gradué de la modalidad de humanidades, desde ese momento me gusta
+                la comunicación.
+                <br>
+                Leer más...
+            </p>
+
+        </article>
+
+    </section>
+<!-- SECCIÓN CUENTA REGRESIVA -->
+<section class="cuenta-regresiva-container">
+    <h2>Cuenta regresiva para el 24 de Noviembre</h2>
+    <div id="reloj" class="reloj">
+        <div class="bloque-tiempo">
+            <span id="dias">00</span>
+            <small>Días</small>
+        </div>
+        <div class="bloque-tiempo">
+            <span id="horas">00</span>
+            <small>Horas</small>
+        </div>
+        <div class="bloque-tiempo">
+            <span id="minutos">00</span>
+            <small>Minutos</small>
+        </div>
+        <div class="bloque-tiempo">
+            <span id="segundos">00</span>
+            <small>Segundos</small>
+        </div>
+    </div>
+</section>
+
+    
+
+    <footer id="redes">
+
+        <p>
+            Contacto: gabriela.molinaha@amigo.edu.co
+        </p>
+
+        <p>
+            Medellín, Colombia
+        </p>
+
+        <p>
+            Instagram: @oe.gabriela
+        </p>
+
+        <p id="sugerencias">
+            Sugerencias
+        </p>
+
+    </footer>
+
+
+
+<script>
+    // Fecha objetivo: 24 de Noviembre de 2026 a las 00:00:00
+    const fechaObjetivo = new Date('November 24, 2026 00:00:00').getTime();
+
+    function actualizarContador() {
+        const ahora = new Date().getTime();
+        const diferencia = fechaObjetivo - ahora;
+
+        if (diferencia <= 0) {
+            document.getElementById('reloj').innerHTML = '<h3 style="color: #333;">¡Llegó el día! 🎉</h3>';
+            return;
+        }
+
+        // Cálculos de tiempo
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+        // Formatear números con dos dígitos (ej. 05 en vez de 5)
+        document.getElementById('dias').innerText = dias < 10 ? '0' + dias : dias;
+        document.getElementById('horas').innerText = horas < 10 ? '0' + horas : horas;
+        document.getElementById('minutos').innerText = minutos < 10 ? '0' + minutos : minutos;
+        document.getElementById('segundos').innerText = segundos < 10 ? '0' + segundos : segundos;
+    }
+
+    // Actualizar cada segundo (1000 ms)
+    setInterval(actualizarContador, 1000);
+    // Ejecutar inmediatamente al cargar la página
+    actualizarContador();
+</script>
+
+</body>
+
+</html>
