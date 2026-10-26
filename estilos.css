@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    background-color: #eaf3f2;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    padding: 5px 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    justify-content: space-around;
+
+    background-color: #f6d7e2;
+
+    border: 1px solid #555;
+}
+
+.menu li {
+    flex: 1;
+
+    text-align: center;
+
+    border-right: 1px solid #999;
+}
+
+.menu li:last-child {
+    border-right: none;
+}
+
+.menu li a {
+    display: block;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    padding: 5px;
+}
+
+.menu li a:hover {
+    background-color: #efc3d2;
+}
+
+
+
+
+.encabezado {
+    background-color: #bfe2e7;
+
+    text-align: center;
+
+    padding: 16px 10px;
+}
+
+.encabezado h1 {
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 38px;
+
+    font-weight: normal;
+
+    color: black;
+}
+    
+
+
+
+
+.presentacion {
+    background-color: #f3cede;
+
+    padding: 22px 20px;
+
+    border: 1px solid #d487a2;
+
+    display: flex;
+    
+    column-gap: 40px;
+    align-items: flex-start;
+
+    min-height: 190px;
+}
+
+
+
+.foto {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.foto img {
+    width: 185px;
+
+    height: 120px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+
+
+.presentacion p {
+    width: 100%;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    line-height: 1.25;
+
+    color: black;
+    display: flex;
+}
+
+
+.publicidad {
+    width: 100%;
+
+    background-color: white;
+}
+
+.publicidad img {
+    width: 100%;
+
+    height: 20%;
+
+    display: block;
+}
+
+
+
+.contenido {
+    background-color: #eaf3f2;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: flex-start;
+
+    gap: 40px;
+
+    padding: 25px 40px 20px;
+
+    flex: 1;
+}
+
+
+/* TARJETAS */
+
+.tarjeta {
+    width: 30%;
+}
+
+.tarjeta h2 {
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+
+/* IMÁGENES DE HOBIE, TEATRO Y GRADUACIÓN */
+
+.tarjeta img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: contain;
+
+    border: none;
+
+    display: block;
+}
+
+
+/* TEXTO DE LAS TARJETAS */
+
+.tarjeta p {
+    margin-top: 12px;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    line-height: 1.2;
+
+    color: black;
+}
+
+
+/* PIE DE PÁGINA */
+
+footer {
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    background-color: #f6d7e2;
+
+    border: 1px solid #999;
+
+    padding: 12px 8px;
+
+    min-height: 45px;
+
+    margin-top: auto;
+}
+
+footer p {
+    text-align: center;
+
+    font-size: 14px;
+
+    color: black;
+}
+
+
+/* PANTALLAS PEQUEÑAS (MÓVILES) */
+@media (max-width: 700px) {
+
+    body {
+        padding: 0;
+    }
+
+    /* MENÚ RESPONSIVE */
+    .menu {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        border-right: none;
+    }
+
+    .menu li {
+        width: 100%;
+        border-right: none; /* Quitamos bordes laterales */
+        border-bottom: 1px solid #999; /* Agregamos separación horizontal */
+    }
+
+    .menu li:last-child {
+        border-bottom: none;
+    }
+
+    .menu li a {
+        padding: 12px 10px; /* Incrementamos área de toque para dedos */
+        font-size: 18px;
+    }
+
+    /* OTRAS ADAPTACIONES EXISTENTES */
+    .presentacion {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .contenido {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
+
+    .tarjeta img {
+        height: auto;
+        max-height: 300px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* Ocultamos el checkbox e ícono en pantallas grandes (escritorio) */
+#menu-check, .menu-btn {
+    display: none;
+}
+
+/* REGLAS PARA CELULARES */
+@media (max-width: 700px) {
+    body {
+        padding: 0;
+    }
+
+    /* Mostrar botón hamburguesa */
+    .menu-btn {
+        display: block;
+        background-color: #f6d7e2;
+        color: black;
+        padding: 10px 15px;
+        font-size: 18px;
+        cursor: pointer;
+        border: 1px solid #555;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /* Ocultar la lista por defecto */
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu li {
+        border-right: none;
+        border-bottom: 1px solid #999;
+    }
+
+    .menu li:last-child {
+        border-bottom: none;
+    }
+
+    .menu li a {
+        padding: 12px;
+    }
+
+    /* Mostrar el menú cuando el checkbox está marcado */
+    #menu-check:checked ~ .menu {
+        display: flex;
+    }
+
+    /* Ajustes generales del sitio */
+    .contenido {
+        flex-direction: column;
+        gap: 25px;
+        padding: 15px;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* ==========================================
+   CARRUSEL RESPONSIVO AUTOMÁTICO
+   ========================================== */
+
+.carrusel-container {
+    width: 100%;
+    overflow: hidden; /* Oculta las imágenes fuera del área visible */
+    background-color: #fff;
+    margin-bottom: 20px; /* Separación con la sección de presentación */
+    border: 1px solid #d487a2;
+}
+
+.carrusel-track {
+    display: flex;
+    width: 300%; /* 100% por cada una de las 3 imágenes */
+    animation: carrusel-slide 12s infinite ease-in-out;
+}
+
+.slide {
+    width: 33.333%; /* Ocupa 1/3 del ancho total del track (100% del contenedor) */
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 350px; /* Altura fija para escritorio */
+    object-fit: cover; /* Mantiene la proporción sin deformar la imagen */
+    display: block;
+}
+
+/* Animación en bucle para 3 imágenes */
+@keyframes carrusel-slide {
+    0%, 28% {
+        transform: translateX(0%); /* Muestra Imagen 1 */
+    }
+    33%, 61% {
+        transform: translateX(-33.333%); /* Muestra Imagen 2 */
+    }
+    66%, 95% {
+        transform: translateX(-66.666%); /* Muestra Imagen 3 */
+    }
+    100% {
+        transform: translateX(0%); /* Regresa suavemente a la Imagen 1 */
+    }
+}
+
+/* AJUSTE PARA DISPOSITIVOS MÓVILES */
+@media (max-width: 700px) {
+    .slide img {
+        height: 200px; /* Reduce la altura en celulares para no ocupar toda la pantalla */
+    }
+}
+
+/* ==========================================
+   SECCIÓN CUENTA REGRESIVA
+   ========================================== */
+
+.cuenta-regresiva-container {
+    background-color: #bfe2e7; /* Fondo acorde al encabezado */
+    border: 1px solid #555;
+    padding: 20px 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.cuenta-regresiva-container h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.reloj {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.bloque-tiempo {
+    background-color: #ffffff;
+    border: 1px solid #d487a2;
+    padding: 12px 18px;
+    min-width: 75px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.bloque-tiempo span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d487a2;
+    line-height: 1;
+}
+
+.bloque-tiempo small {
+    font-size: 12px;
+    color: #555;
+    margin-top: 6px;
+    text-transform: uppercase;
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 700px) {
+    .reloj {
+        gap: 8px;
+    }
+    
+    .bloque-tiempo {
+        min-width: 65px;
+        padding: 8px 10px;
+    }
+    
+    .bloque-tiempo span {
+        font-size: 22px;
+    }
+}
